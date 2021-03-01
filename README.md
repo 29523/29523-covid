@@ -14,4 +14,4 @@ I worked on lab 1 with Sara Jafroudi, troubleshooting the CSS code and creating 
 https://29523.github.io/29523-lab1covid/
 
 ## Screenshot of My Map
-![Image of Yaktocat](https://github.com/29523/29523-covid/blob/main/Screenshot.png)
+![Image of Yaktocat](https://github.com/29523/29523-lab1covid/blob/main/Screenshotofmap.png)
