@@ -6,4 +6,4 @@ I chose a basic map in Mapbox with a dark theme to match a “heavier” topic c
 
 One important cartographic principle is visual contrast and colour representation. Everyone is familiar with the colour black. Therefore, I used a darker toned map background and a darker shade of red to indicate higher severity. Since I have eight classes, I have to be careful of which shades to use, so it is distinguishable to the human eye. One way to increase the readability of this map is by adding the number of active cases right onto each province rather than having it shown only when the mouse cursor moves on top. It would also be interesting to see this data compared to another country, such as the United States of America just below Canada.
 
-
+![Image of Yaktocat](https://github.com/29523/29523-covid/blob/main/Screenshot.png)
