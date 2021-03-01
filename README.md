@@ -11,7 +11,7 @@ One important cartographic principle is visual contrast and colour representatio
 I worked on lab 1 with Sara Jafroudi, troubleshooting the CSS code and creating a legend on the map. We had some difficulties understanding the tutorials given by Mapbox as it expects a certain level of knowledge. I also had some help from Professor Bergmann troubleshooting attribute/property names. It is a good habit to follow naming conventions that do not contain spaces between words but rather connect words by using "_" or "-."
 
 ## Link to Map: 
-https://29523.github.io/29523-covid/
+https://29523.github.io/29523-lab1covid/
 
 ## Screenshot of My Map
 ![Image of Yaktocat](https://github.com/29523/29523-covid/blob/main/Screenshot.png)
