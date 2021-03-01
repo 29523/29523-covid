@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+	
+	<style>
+	body {
+	  margin: 0;
+	  padding: 0;
+	}
+
+	h2,
+	h3 {
+	  margin: 10px;
+	  font-size: 1em;
+	  text-align: center;
+	}
+
+	h3 {
+	  font-size: 0.8em;
+	}
+
+	p {
+	  font-size: 0.85em;
+	  margin: 10px;
+	  text-align: left;
+	}
+
+	/**
+	* Create a position for the map
+	* on the page */
+	#map {
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  width: 100%;
+	}
+
+	/**
+	* Set rules for how the map overlays
+	* (information box and legend) will be displayed
+	* on the page. */
+	.map-overlay {
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  background: rgba(255, 255, 255, 0.8);
+	  margin-right: 20px;
+	  font-family: Arial, sans-serif;
+	  overflow: auto;
+	  border-radius: 3px;
+	}
+
+	#features {
+	  top: 0;
+	  height: 140px;
+	  margin-top: 20px;
+	  width: 250px;
+	}
+
+	#legend {
+	  padding: 10px;
+	  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	  line-height: 18px;
+	  height: 150px;
+	  margin-bottom: 40px;
+	  width: 100px;
+	}
+
+	.legend-key {
+	  display: inline-block;
+	  border-radius: 20%;
+	  width: 10px;
+	  height: 10px;
+	  margin-right: 5px;
+	}
+	</style>
+	
+</head>
+
+<body>
+
+	<div id='map'></div>
+	<div class='map-overlay' id='features'><h2>Rate of Active Cases of COVID-19 in Canada</h2><div id='pd'><p>Hover over a province!</p></div></div>
+	<div class='map-overlay' id='legend'></div>
+	
+	<script>
+	
+	//define access token 
+	mapboxgl.accessToken = 'pk.eyJ1IjoiMjk1MjMiLCJhIjoiY2tsbHdzNXU4MDNpajJxcWY0NWw3aDdieCJ9.Ua6JW_pxhGIaepg-oQDusg';
+	
+	//create map
+	var map = new mapboxgl.Map({
+		container: 'map', //container id
+		style: 'mapbox://styles/29523/ckloddlrv16xp17pm27tg5nsy' //map style URL from Mapbox Studio
+	});
+	
+	//wait for map to load before adjusting it
+	map.on('load', function() {
+		//make a pointer cursor 
+		map.getCanvas().style.cursor = 'default';
+	
+	//define layer names
+	var layers = ['0-2', '3-50', '51-70', '71-80', '81-90', '91-100', '101-125', '125+'];
+	var colors = ['#ffffff', '#f3e7e7', '#e2bfbf', '#d19999', '#bf7373', '#ae4d4d', '#9c2626', '#8b0000'];
+
+	//create legend
+	for (i = 0; i < layers.length; i++) {
+	  var layer = layers[i];
+	  var color = colors[i];
+	  var item = document.createElement('div');
+	  var key = document.createElement('span');
+	  key.className = 'legend-key';
+	  key.style.backgroundColor = color;
+
+	  var value = document.createElement('span');
+	  value.innerHTML = layer;
+	  item.appendChild(key);
+	  item.appendChild(value);
+	  legend.appendChild(item);
+	}
+
+	//change info window on hover
+        map.on('mousemove', function (e) {
+          var province = map.queryRenderedFeatures(e.point, {
+            layers: ['canadaprovinces']
+          });
+
+          if (province.length > 0) {
+            document.getElementById('pd').innerHTML =
+              '<h3><strong>' +
+              province[0].Province +
+              '</strong></h3><p><strong><em>' +
+              province[0].Rate of Active Cases  +
+              '</strong> rate per 100,000 people as of February, 2021.</em></p>';
+          } else {
+            document.getElementById('pd').innerHTML =
+              '<p>Hover over a province!</p>';
+	  }
+	});
+});
+	</script>
+	
+</body>
+  
+ </html>
