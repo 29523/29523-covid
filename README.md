@@ -13,5 +13,5 @@ I worked on lab 1 with Sara Jafroudi, troubleshooting the CSS code and creating 
 ## Link to Map: 
 https://29523.github.io/29523-covid/
 
-## Screenshot of my Map
+## Screenshot of My Map
 ![Image of Yaktocat](https://github.com/29523/29523-covid/blob/main/Screenshot.png)
