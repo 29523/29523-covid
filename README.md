@@ -1,4 +1,4 @@
-Active rate of COVID-19 cases in Canada
+# Lab 1 - Active rate of COVID-19 cases in Canada
 
 As we are approaching a year of lockdown due to Covid-19, I am curious if we are any closer to the end of a pandemic. In Vancouver, there is no designated date when the mini lockdown ends. However, I have been seeing plenty of people outside of their immediate family in public. I designed this map to see the current active rate of cases in each province, calculated per 100,000 population as of February 2021. By comparing the current rate of active cases in each province, we can deduce if British Columbia's health policies are effective or not and consider what other provinces may be doing differently. Using data collected by the Government of Canada (https://health-infobase.canada.ca/covid-19/?stat=rate&measure=active#a2), Ontario has around 15 million in the population, a rate of 71 compared to British Columbia’s higher rate of 92, with only a population of 5 million. 
 
